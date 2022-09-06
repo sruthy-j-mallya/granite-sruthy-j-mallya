@@ -1,16 +1,7 @@
 # frozen_string_literal: true
 
 json.task do
-  json.extract! @task,
-    :id,
-    :slug,
-    :title
-
-  json.assigned_user do
-    json.extract! @task.assigned_user,
-      :id,
-      :name
-  end
+  json.partial! "tasks/task", task: @task
 
   json.comments @comments do |comment|
     json.extract! comment,
@@ -23,5 +14,4 @@ json.task do
     json.extract! @task.task_owner,
       :name
   end
-
 end
