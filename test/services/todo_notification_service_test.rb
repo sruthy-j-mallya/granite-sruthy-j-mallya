@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 require "test_helper"
-require "support/sidekiq_helper"
 class TodoNotificationServiceTest < ActiveSupport::TestCase
-  include SidekiqHelper
-
   def setup
     @sam = create(:task).assigned_user # assignee of the generated task
     @nancy = create(:task).assigned_user # assignee of another generated task
