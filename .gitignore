@@ -126,3 +126,6 @@ dump.rdb
 yarn-debug.log*
 .yarn-integrity
 coverage
+
+#Ignore database config file
+/config/database.yml
